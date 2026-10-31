@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Instagram, Sparkles, ShoppingBag } from 'lucide-react'
+import { ArrowRight, Camera, Sparkles, ShoppingBag } from 'lucide-react'
 import { Header, Footer } from '@/components/store'
 
 const looks = [
@@ -24,7 +24,7 @@ export default function HomePage() {
           <p className="mt-7 max-w-sm text-base leading-7 text-[#64595c]">{banner.subtitle}</p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link href="/produtos" className="inline-flex items-center gap-3 bg-[#20191b] px-6 py-4 text-[11px] font-semibold uppercase tracking-[.13em] text-white transition hover:bg-[#b97d8b]">Explorar coleção <ArrowRight size={16}/></Link>
-            <a href={socials} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 border border-[#b97986] px-6 py-4 text-[11px] font-semibold uppercase tracking-[.13em] text-[#20191b]">Nosso Instagram <Instagram size={15}/></a>
+            <a href={socials} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 border border-[#b97986] px-6 py-4 text-[11px] font-semibold uppercase tracking-[.13em] text-[#20191b]">Nosso Camera <Camera size={15}/></a>
           </div>
           <p className="mt-12 text-xs uppercase tracking-[.13em] text-[#9e848b]">Prévia de loja · Fotos ilustrativas</p>
         </div>
@@ -43,6 +43,6 @@ export default function HomePage() {
       <div className="relative aspect-[4/4] overflow-hidden bg-[#ecd8dd]"><Image src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85" alt="Roupas em composição editorial ilustrativa" fill sizes="(max-width:768px) 100vw,50vw" className="object-cover"/></div>
       <div><p className="text-[11px] font-semibold uppercase tracking-[.25em] text-[#b97986]">Mania de vestir bem</p><h2 className="mt-5 max-w-lg font-serif text-5xl leading-[1.06] tracking-[-.05em] text-[#20191b]">Uma vitrine para valorizar cada escolha.</h2><p className="mt-6 max-w-md leading-7 text-[#665d60]">Uma experiência online pensada para apresentar coleções, explorar peças e facilitar o contato com a loja.</p><Link href="/produtos" className="mt-8 inline-flex items-center gap-2 border-b border-[#20191b] pb-2 text-xs font-semibold uppercase tracking-wider">Conheça a prévia <ArrowRight size={16}/></Link></div>
     </div></section>
-    <section className="bg-[#f5b5bd] px-5 py-16 text-center"><Sparkles className="mx-auto text-[#20191b]" size={24}/><h2 className="mt-4 font-serif text-4xl text-[#20191b]">Seu próximo look começa aqui.</h2><p className="mx-auto mt-3 max-w-md text-sm text-[#514549]">Acompanhe as novidades da JR Store.</p><a href={socials} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 bg-[#20191b] px-7 py-3 text-xs font-semibold uppercase tracking-widest text-white"><Instagram size={16}/> Visitar Instagram</a></section>
+    <section className="bg-[#f5b5bd] px-5 py-16 text-center"><Sparkles className="mx-auto text-[#20191b]" size={24}/><h2 className="mt-4 font-serif text-4xl text-[#20191b]">Seu próximo look começa aqui.</h2><p className="mx-auto mt-3 max-w-md text-sm text-[#514549]">Acompanhe as novidades da JR Store.</p><a href={socials} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 bg-[#20191b] px-7 py-3 text-xs font-semibold uppercase tracking-widest text-white"><Camera size={16}/> Visitar Camera</a></section>
   </main><Footer/></>
 }
