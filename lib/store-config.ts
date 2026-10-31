@@ -1,0 +1,2 @@
+export const storeConfig={name:'JR Store',shortName:'JR STORE',instagram:'jrstorefeminina',whatsapp:'',shippingDisplay:'A consultar',shippingAmount:0,primaryColor:'#FFB1B8',logoUrl:'/placeholder-logo.svg',heroTitle:'Mania de vestir bem.',heroSubtitle:'Elegância para mulheres reais.',demoNotice:'Prévia demonstrativa — projeto não oficial.'} as const
+export const whatsappUrl=(message?:string)=>storeConfig.whatsapp ? 'https://wa.me/'+storeConfig.whatsapp+(message?'?text='+encodeURIComponent(message):'') : 'https://instagram.com/jrstorefeminina'

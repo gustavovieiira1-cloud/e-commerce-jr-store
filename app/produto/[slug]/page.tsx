@@ -1,0 +1,9 @@
+import Image from 'next/image'
+import { notFound } from 'next/navigation'
+import { ArrowLeft, Check, Truck } from 'lucide-react'
+import Link from 'next/link'
+import { AddToBag, Footer, Header } from '@/components/store'
+import { formatPrice, products } from '@/lib/products'
+
+export function generateStaticParams() { return products.map(p => ({ slug: p.slug })) }
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; const product = products.find(p => p.slug === slug); if (!product) notFound(); return <><Header /><main className="mx-auto max-w-7xl px-5 py-10 lg:px-8"><Link href="/produtos" className="mb-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-black/55"><ArrowLeft className="size-4" /> Voltar para produtos</Link><div className="grid gap-10 md:grid-cols-2 md:gap-16"><div className="relative aspect-[3/4] bg-[#f2f0ec]"><Image src={product.image} alt={product.name} fill priority sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" /></div><div className="flex flex-col justify-center"><p className="text-xs uppercase tracking-[0.2em] text-[#ffb1b8]">{product.category}</p><h1 className="mt-3 font-serif text-5xl leading-none tracking-[-0.05em]">{product.name}</h1><p className="mt-5 text-xl">{formatPrice(product.price)}</p><p className="mt-6 max-w-md leading-7 text-black/60">{product.description}</p><div className="my-8 border-y border-black/10 py-5 text-xs text-black/60"><div className="flex items-center gap-2"><Check className="size-4 text-[#ffb1b8]" /> Disponibilidade confirmada pelo WhatsApp</div><div className="mt-3 flex items-center gap-2"><Truck className="size-4 text-[#ffb1b8]" /> Frete fixo anunciado de A consultar</div></div><AddToBag product={product} /></div></div></main><Footer /></> }
