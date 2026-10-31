@@ -9,7 +9,7 @@ const looks = [
   { title:'Vestidos', image:'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=850&q=85',tag:'Elegância em cada detalhe' },
   { title:'Conjuntos', image:'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=850&q=85',tag:'Para todos os momentos' },
   { title:'Blusas', image:'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=850&q=85',tag:'Um estilo só seu' },
-  { title:'Looks', image:'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=850&q=85',tag:'Inspire-se' }
+  { title:'Looks', image:'/jr-look.jpg',tag:'Inspire-se' }
 ]
 const socials = 'https://www.instagram.com/jrstorefeminina/'
 export default function HomePage() {
@@ -33,7 +33,7 @@ export default function HomePage() {
     </section>
     <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
       <div className="mb-9 flex flex-wrap items-end justify-between gap-4"><div><p className="text-[11px] font-semibold uppercase tracking-[.25em] text-[#b97986]">A sua próxima inspiração</p><h2 className="mt-3 font-serif text-4xl tracking-[-.035em] text-[#20191b] md:text-5xl">Explore seu estilo.</h2></div><Link href="/produtos" className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider">Ver catálogo <ArrowRight size={16}/></Link></div>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">{looks.map(look=><Link href={`/produtos?categoria=${look.title==='Looks'?'Todos':look.title}`} key={look.title} className="group"><div className="relative aspect-[3/4] overflow-hidden bg-[#fae7e9]"><Image src={look.image} alt={`Inspiração de moda feminina: ${look.title}`} fill sizes="(max-width:768px) 50vw,25vw" className="object-cover transition-transform duration-500 group-hover:scale-105"/></div><p className="mt-4 font-serif text-2xl text-[#20191b]">{look.title}</p><p className="mt-1 text-xs text-[#81777b]">{look.tag}</p></Link>)}</div>
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">{looks.map(look=><Link href={`/produtos?categoria=${look.title==='Looks'?'Todos':look.title}`} key={look.title} className="group"><div className="relative aspect-[3/4] overflow-hidden bg-[#fae7e9]"><Image src={look.image} alt={`Inspiração de moda feminina: ${look.title}`} onError={(e) => { e.currentTarget.src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=850&q=85" }} fill sizes="(max-width:768px) 50vw,25vw" className="object-cover transition-transform duration-500 group-hover:scale-105"/></div><p className="mt-4 font-serif text-2xl text-[#20191b]">{look.title}</p><p className="mt-1 text-xs text-[#81777b]">{look.tag}</p></Link>)}</div>
       <p className="mt-6 text-xs text-[#89777e]"></p>
     </section>
     <section className="bg-[#f8f1f2] px-5 py-20 lg:px-8"><div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
