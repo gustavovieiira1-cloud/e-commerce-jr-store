@@ -10,7 +10,7 @@ import { Product, formatPrice, products } from '@/lib/products'
 const WHATSAPP = storeConfig.whatsapp
 
 export function Logo({ inverse = false }: { inverse?: boolean }) {
-  return <Link href="/" className={`flex items-center gap-3 ${inverse ? 'text-white' : 'text-[#151515]'}`}><img src="/jr-brand-horizontal.svg" alt="JR Store — Mania de vestir bem" className="h-11 w-auto max-w-[175px] object-contain" /></Link>
+  return <Link href="/" className={`flex items-center gap-3 ${inverse ? 'text-white' : 'text-[#151515]'}`}><img src="/jr-brand-horizontal.svg" alt="JR Store — Mania de vestir bem" className="h-10 w-auto max-w-[180px] object-contain md:h-12 md:max-w-[205px]" /></Link>
 }
 
 export function Header({ cartCount = 0 }: { cartCount?: number }) {
